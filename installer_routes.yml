@@ -1,0 +1,178 @@
+installersClubWelcome:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { gb: { en: installers }, it: { it: installatori }, 'de, at': { de: fachpartner } }
+    view: { path: 'installers-club::pages.welcome.index', lg: 'installers-club::welcome.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+installersClubProgram:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { gb: { en: installers/program }, it: { it: installatori/programma }, 'de, at': { de: fachpartner/programm } }
+    view: { path: 'installers-club::pages.program.index', lg: 'installers-club::program.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubMaintenance:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { 'de, at': { de: fachpartner/fernwartunsgportal }, it: { it: installatori/manutenzione-remota } }
+    view: { path: 'installers-club::pages.maintenance.maintenance', lg: 'installers-club::maintenance.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubCooling:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { it: { it: installatori/climatizzazione } }
+    view: { path: 'installers-club::pages.cooling.cooling', lg: 'installers-club::cooling.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubPreShop:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { 'de, at': { de: fachpartner/preshop }, it: { it: installatori/preshop } }
+    view: { path: 'installers-club::pages.preshop.preshop', lg: 'installers-club::preshop.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubContact:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@showContactForm
+    url: { gb: { en: installers/contact }, it: { it: installatori/contatti }, 'de, at': { de: fachpartner/kontakt } }
+    view: { path: 'installers-club::contact', lg: 'installers-club::contact.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+installersClubContactSubmission:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@contact
+    url: installers/contact/submit
+    view: { lg: 'installers-club::registration.' }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+lgFachpartnerLandingPage:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@lgContactFormRedirector
+    url: ibc-solar
+    view: {  }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubTraining:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { gb: { en: installers/training-and-support }, it: { it: installatori/training-e-aiuto }, 'de, at': { de: fachpartner/schulung-und-hilfe } }
+    view: { path: 'installers-club::trainingAndSupport', lg: 'installers-club::training.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubSalesTools:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { gb: { en: installers/sales-tools }, it: { it: installatori/tools-vendite }, 'de, at': { de: fachpartner/marketing-material } }
+    view: { path: 'installers-club::salesTools', lg: 'installers-club::salesTools.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubCompatibilityCheck:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { 'de, at': { de: fachpartner/kompatibilitaet-pruefen } }
+    view: { path: 'installers-club::compatibilityCheck', lg: 'installers-club::compatibilityCheck.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubRegistration:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@registration
+    url: { 'de, at': { de: fachpartner/registrierung } }
+    view: { path: 'installers-club::registration', lg: 'installers-club::registration.', responsiveLayout: true, registrationForm: registrationFormAlt }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+installersClubRegistrationSubmission:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@register
+    url: { 'de, at': { de: fachpartner/registrierung/einreichen }, gb: { en: installers/registration/submit }, it: { it: installatori/registrazione/invio } }
+    view: { lg: 'installers-club::registration.', registrationFormByCountry: { gb: registrationForm, it: registrationForm, de: registrationFormAlt, at: registrationFormAlt } }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubRegistrationEmailVerification:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@confirmEmail
+    url: { gb: { en: 'installers/registration/confirm/{email}/{confirmationCode}' } }
+    view: { path: 'installers-club::registrationVerifyEmail', lg: 'installers-club::registration.' }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubShowLogin:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@generic
+    url: { gb: { en: installers/login }, it: { it: installatori/login }, 'de, at': { de: fachpartner/anmelden } }
+    view: { path: 'installers-club::login', lg: 'installers-club::login.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubLogin:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@login
+    url: installers/login/submit
+    view: { path: 'installers-club::login', lg: 'installers-club::login.' }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubLogout:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@redirectToWelcomePage
+    url: installers/logout
+    middleware: [installersClubSwitchAuthProvider, installersClubLogout]
+    sitemap: false
+installersClubUnlocalized:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@redirectToWelcomePage
+    url: installers
+    view: { locale: gb }
+    sitemap: false
+installersClubUnlocalized2:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@redirectToWelcomePage
+    url: installer
+    view: { locale: gb }
+    sitemap: false
+installersClubUnlocalized3:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@redirectToWelcomePage
+    url: fachpartner
+    view: { locale: de, optionalLocale: at }
+    sitemap: false
+installersClubUnlocalized4:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@redirectToWelcomePage
+    url: installatori
+    view: { locale: it }
+    sitemap: false
+installersClubCheck:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@redirectToCompatibilityCheckOrTraining
+    url: installcheck
+    view: { locale: de, redirectAlias: installersClubCompatibilityCheck }
+    middleware: [installersClubSwitchAuthProvider]
+    sitemap: false
+installersClubCallbackSubmission:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@callbackSubmission
+    url: installers/callback-submission
+    middleware: [installersClubSwitchAuthProvider]
+    sitemap: false
+installersClubFeedbackSubmission:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@feedbackSubmission
+    url: installers/feedback-form-submission
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+    sitemap: false
+installersClubExternalInstallationTicketSubmission:
+    action: Tado\InstallersClub\Controllers\InstallersClubController@externalInstallationTicketSubmission
+    url: 'installers/external-installation-ticket-submission/{id}'
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+    sitemap: false
+installersClubPasswordReminder:
+    action: Tado\InstallersClub\Controllers\RemindersController@getRemind
+    url: { gb: { en: installers/registration/password-reminder }, it: { it: installatori/registrazione/password-reminder }, 'de, at': { de: fachpartner/registrierung/passwort-andern } }
+    view: { path: 'installers-club::passwordReminder', lg: 'installers-club::passwordReminder.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubPasswordReminderPost:
+    action: Tado\InstallersClub\Controllers\RemindersController@postRemind
+    url: installers/registration/post-password-reminder
+    view: { path: 'installers-club::passwordReminder', lg: 'installers-club::passwordReminder.' }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubPasswordReset:
+    action: Tado\InstallersClub\Controllers\RemindersController@getReset
+    url: { gb: { en: 'installers/registration/password-reset/{token}' }, it: { it: 'installatori/registrazione/password-reset/{token}' }, 'de, at': { de: 'fachpartner/registration/password-reset/{token}' } }
+    view: { path: 'installers-club::passwordReset', lg: 'installers-club::passwordReset.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubPasswordResetPost:
+    action: Tado\InstallersClub\Controllers\RemindersController@postReset
+    url: installers/registration/post-password-reset
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubPasswordCreate:
+    action: Tado\InstallersClub\Controllers\RemindersController@createPassword
+    url: { gb: { en: 'installers/registration/password-create/{token}' }, it: { it: 'installatori/registrazione/password-create/{token}' }, 'de, at': { de: 'fachpartner/registration/password-create/{token}' } }
+    view: { path: 'installers-club::passwordCreate', lg: 'installers-club::passwordCreate.', responsiveLayout: true }
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubPasswordCreatePost:
+    action: Tado\InstallersClub\Controllers\RemindersController@postCreatePassword
+    url: installers/registration/post-password-create
+    middleware: [installersClubSwitchAuthProvider, setCatalogToInstallersClubByCountry]
+    sitemap: false
+installersClubWebinarRegistrationSubmission:
+    action: TadoController@websiteFormSubmission
+    url: installers/webinar/registration
+    middleware: [installersClubSwitchAuthProvider, installersClubAuth, setCatalogToInstallersClubByCountry]
+    sitemap: false

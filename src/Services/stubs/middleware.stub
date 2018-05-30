@@ -1,0 +1,5 @@
+// Routes with middleware {{middleware}}
+Route::group(['middleware' => {{middleware}}], function() {
+{{routes}}
+});
+

@@ -1,0 +1,263 @@
+installersClubCallbackSubmission:
+  action: InstallersClubController@callbackSubmission
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url: installers/callback-submission
+installersClubCheck:
+  action: InstallersClubController@redirectToCompatibilityCheckOrTraining
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url: installcheck
+  view: {locale: de, redirectAlias: installersClubCompatibilityCheck}
+installersClubCompatibilityCheck:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/kompatibilitaet-pruefen}
+  view: {lg: 'installers-club::compatibilityCheck.', path: 'installers-club::compatibilityCheck',
+    responsiveLayout: true}
+installersClubContact:
+  action: InstallersClubController@showContactForm
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  url:
+    de, at: {de: fachpartner/kontakt}
+    gb: {en: installers/contact}
+    it: {it: installatori/contatti}
+  view: {lg: 'installers-club::contact.', path: 'installers-club::contact', responsiveLayout: true}
+installersClubContactSubmission:
+  action: InstallersClubController@contact
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url: installers/contact/submit
+  view: {lg: 'installers-club::registration.'}
+installersClubCooling:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url:
+    it: {it: installatori/climatizzazione}
+  view: {lg: 'installers-club::cooling.', path: 'installers-club::pages.cooling.cooling',
+    responsiveLayout: true}
+installersClubExternalInstallationTicketSubmission:
+  action: InstallersClubController@externalInstallationTicketSubmission
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url: installers/external-installation-ticket-submission/{id}
+installersClubFeedbackSubmission:
+  action: InstallersClubController@feedbackSubmission
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url: installers/feedback-form-submission
+installersClubLogin:
+  action: InstallersClubController@login
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url: installers/login/submit
+  view: {lg: 'installers-club::login.', path: 'installers-club::login'}
+installersClubLogout:
+  action: InstallersClubController@redirectToWelcomePage
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider, installersClubLogout]
+  sitemap: false
+  url: installers/logout
+installersClubMaintenance:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/fernwartunsgportal}
+    it: {it: installatori/manutenzione-remota}
+  view: {lg: 'installers-club::maintenance.', path: 'installers-club::pages.maintenance.maintenance',
+    responsiveLayout: true}
+installersClubPasswordCreate:
+  action: RemindersController@createPassword
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url:
+    de, at: {de: 'fachpartner/registration/password-create/{token}'}
+    gb: {en: 'installers/registration/password-create/{token}'}
+    it: {it: 'installatori/registrazione/password-create/{token}'}
+  view: {lg: 'installers-club::passwordCreate.', path: 'installers-club::passwordCreate',
+    responsiveLayout: true}
+installersClubPasswordCreatePost:
+  action: RemindersController@postCreatePassword
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url: installers/registration/post-password-create
+installersClubPasswordReminder:
+  action: RemindersController@getRemind
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/registrierung/passwort-andern}
+    gb: {en: installers/registration/password-reminder}
+    it: {it: installatori/registrazione/password-reminder}
+  view: {lg: 'installers-club::passwordReminder.', path: 'installers-club::passwordReminder',
+    responsiveLayout: true}
+installersClubPasswordReminderPost:
+  action: RemindersController@postRemind
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url: installers/registration/post-password-reminder
+  view: {lg: 'installers-club::passwordReminder.', path: 'installers-club::passwordReminder'}
+installersClubPasswordReset:
+  action: RemindersController@getReset
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url:
+    de, at: {de: 'fachpartner/registration/password-reset/{token}'}
+    gb: {en: 'installers/registration/password-reset/{token}'}
+    it: {it: 'installatori/registrazione/password-reset/{token}'}
+  view: {lg: 'installers-club::passwordReset.', path: 'installers-club::passwordReset',
+    responsiveLayout: true}
+installersClubPasswordResetPost:
+  action: RemindersController@postReset
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url: installers/registration/post-password-reset
+installersClubPreShop:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/preshop}
+    it: {it: installatori/preshop}
+  view: {lg: 'installers-club::preshop.', path: 'installers-club::pages.preshop.preshop',
+    responsiveLayout: true}
+installersClubProgram:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/programm}
+    gb: {en: installers/program}
+    it: {it: installatori/programma}
+  view: {lg: 'installers-club::program.', path: 'installers-club::pages.program.index',
+    responsiveLayout: true}
+installersClubRegistration:
+  action: InstallersClubController@registration
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  url:
+    de, at: {de: fachpartner/registrierung}
+  view: {lg: 'installers-club::registration.', path: 'installers-club::registration',
+    registrationForm: registrationFormAlt, responsiveLayout: true}
+installersClubRegistrationEmailVerification:
+  action: InstallersClubController@confirmEmail
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url:
+    gb: {en: 'installers/registration/confirm/{email}/{confirmationCode}'}
+  view: {lg: 'installers-club::registration.', path: 'installers-club::registrationVerifyEmail'}
+installersClubRegistrationSubmission:
+  action: InstallersClubController@register
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/registrierung/einreichen}
+    gb: {en: installers/registration/submit}
+    it: {it: installatori/registrazione/invio}
+  view:
+    lg: installers-club::registration.
+    registrationFormByCountry: {at: registrationFormAlt, de: registrationFormAlt,
+      gb: registrationForm, it: registrationForm}
+installersClubSalesTools:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/marketing-material}
+    gb: {en: installers/sales-tools}
+    it: {it: installatori/tools-vendite}
+  view: {lg: 'installers-club::salesTools.', path: 'installers-club::salesTools',
+    responsiveLayout: true}
+installersClubShowLogin:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/anmelden}
+    gb: {en: installers/login}
+    it: {it: installatori/login}
+  view: {lg: 'installers-club::login.', path: 'installers-club::login', responsiveLayout: true}
+installersClubTraining:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url:
+    de, at: {de: fachpartner/schulung-und-hilfe}
+    gb: {en: installers/training-and-support}
+    it: {it: installatori/training-e-aiuto}
+  view: {lg: 'installers-club::training.', path: 'installers-club::trainingAndSupport',
+    responsiveLayout: true}
+installersClubUnlocalized:
+  action: InstallersClubController@redirectToWelcomePage
+  methods: [get]
+  sitemap: false
+  url: installers
+  view: {locale: gb}
+installersClubUnlocalized2:
+  action: InstallersClubController@redirectToWelcomePage
+  methods: [get]
+  sitemap: false
+  url: installer
+  view: {locale: gb}
+installersClubUnlocalized3:
+  action: InstallersClubController@redirectToWelcomePage
+  methods: [get]
+  sitemap: false
+  url: fachpartner
+  view: {locale: de, optionalLocale: at}
+installersClubUnlocalized4:
+  action: InstallersClubController@redirectToWelcomePage
+  methods: [get]
+  sitemap: false
+  url: installatori
+  view: {locale: it}
+installersClubWebinarRegistrationSubmission:
+  action: TadoController@websiteFormSubmission
+  methods: [post]
+  middleware: [installersClubSwitchAuthProvider, installersClubAuth]
+  sitemap: false
+  url: installers/webinar/registration
+installersClubWelcome:
+  action: InstallersClubController@generic
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  url:
+    de, at: {de: fachpartner}
+    gb: {en: installers}
+    it: {it: installatori}
+  view: {lg: 'installers-club::welcome.', path: 'installers-club::pages.welcome.index',
+    responsiveLayout: true}
+lgFachpartnerLandingPage:
+  action: InstallersClubController@lgContactFormRedirector
+  methods: [get]
+  middleware: [installersClubSwitchAuthProvider]
+  sitemap: false
+  url: ibc-solar
+  view: {}

@@ -1,0 +1,1761 @@
+mainPages:
+  home:
+    url:
+      '*': { en: '' }
+      FSC: { fr: '' }
+      ISC: { it: '' }
+      SSC: { es: '' }
+      GSC: { de: '' }
+      DSC: { nl: '' }
+    controller: TadoController@homeRedirect
+  heatingHome:
+    url:
+      ESC_HOMEPAGE_HEATING_COUNTRIES: { en: '' }
+      FSC_HOMEPAGE_HEATING_COUNTRIES: { fr: '' }
+      SSC_HOMEPAGE_HEATING_COUNTRIES: { es: '' }
+      ISC_HOMEPAGE_HEATING_COUNTRIES: { it: '' }
+      GSC_HOMEPAGE_HEATING_COUNTRIES: { de: '' }
+      DSC_HOMEPAGE_HEATING_COUNTRIES: { nl: '' }
+      ESC_HOMEPAGE_COOLING_COUNTRIES: { en: heating-smart-thermostat }
+      FSC_HOMEPAGE_COOLING_COUNTRIES: { fr: chauffage-thermostat-intelligent }
+      ISC_HOMEPAGE_COOLING_COUNTRIES: { it: riscaldamento-termostato-intelligente }
+      SSC_HOMEPAGE_COOLING_COUNTRIES: { es: termostato-inteligente }
+      GSC_HOMEPAGE_COOLING_COUNTRIES: { de: heating-smart-thermostat }
+    view:
+      path: pages.home
+      lg: home.
+      sectionsByLocale: { default: { intro: include, press: include, features: include, products: include, description: include, news: include } }
+      composers: [Tado\Views\Composers\PageSubsectionsByLocale, Tado\Views\Composers\SocialMediaStats, Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+      useNewHeader: true
+      responsiveLayout: true
+    controller: TadoController@heatingSectionPagesProxy
+  productsMain:
+    url:
+      '*': { en: products }
+      FSC: { fr: produits }
+      ISC: { it: prodotti }
+      SSC: { es: productos }
+      GSC: { de: produkte }
+      DSC: { nl: producten }
+    controller: TadoController@genericFlexboxDesign
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\Money, Tado\Views\Composers\ProductPrices]
+  productStarterKit:
+    url:
+      '*': { en: products/smart-thermostat-starter-kit }
+      FSC: { fr: produits/thermostat-intelligent-kit-demarrage }
+      ISC: { it: prodotti/termostato-intelligente-kit-base }
+      SSC: { es: productos/termostato-inteligente-kit-inicio }
+      GSC: { de: produkte/smartes-thermostat-starter-kit }
+      DSC: { nl: producten/starterskit-slimme-thermostaat }
+    controller: TadoController@heatingProductPagesProxy
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+  productAst:
+    url:
+      '*': { en: products/additional-smart-thermostat }
+      FSC: { fr: produits/thermostat-intelligent-additionnel }
+      ISC: { it: prodotti/termostato-intelligente-aggiuntivo }
+      SSC: { es: productos/termostato-inteligente-adicional }
+      GSC: { de: produkte/smartes-zusatz-thermostat }
+      DSC: { nl: producten/additionele-slimme-thermostaat }
+    controller: TadoController@heatingProductPagesProxy
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+  productEk:
+    url:
+      '*': { en: products/extension-kit }
+      FSC: { fr: produits/kit-extension }
+      ISC: { it: prodotti/kit-di-estensione }
+      SSC: { es: productos/kit-de-extension }
+      GSC: { de: produkte/extension-kit }
+      DSC: { nl: producten/extensiekit }
+    controller: TadoController@heatingProductPagesProxy
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+  productSac:
+    url:
+      '*': { en: products/smart-ac-control }
+      FSC: { fr: produits/Climatisation-Intelligente }
+      ISC: { it: prodotti/climatizzazione-intelligente }
+      SSC: { es: productos/climatizacion-inteligente }
+      GSC: { de: produkte/smart-ac-control }
+      DSC: { nl: producten/slimme-aircobediening }
+    controller: TadoController@genericFlexboxDesign
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+  productSrv:
+    url:
+      '*': { en: products/smart-radiator-valve }
+      FSC: { fr: produits/valve-thermostatique-intelligente }
+      ISC: { it: prodotti/valvola-termostatica-intelligente }
+      SSC: { es: productos/valvula-termostatica-inteligente }
+      GSC: { de: produkte/smartes-heizkoerper-thermostat }
+      DSC: { nl: producten/slimme-radiatorknop }
+    controller: TadoController@heatingProductPagesProxy
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+  productSrvKit:
+    url:
+      '*': { en: products/smart-radiator-starter-kit }
+      FSC: { fr: produits/valves-intelligentes-kit-demarrage }
+      ISC: { it: prodotti/valvole-termostatiche-intelligenti-kit-di-base }
+      SSC: { es: productos/valvula-inteligente-kit-de-inicio }
+      GSC: { de: produkte/smartes-heizkoerper-starter-kit }
+      DSC: { nl: producten/starterskit-slimme-radiatorknoppen }
+    controller: TadoController@heatingProductPagesProxy
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+  coolingHome:
+    url:
+      ESC_HOMEPAGE_COOLING_COUNTRIES: { en: '' }
+      FSC_HOMEPAGE_COOLING_COUNTRIES: { fr: '' }
+      SSC_HOMEPAGE_COOLING_COUNTRIES: { es: '' }
+      ISC_HOMEPAGE_COOLING_COUNTRIES: { it: '' }
+      GSC_HOMEPAGE_COOLING_COUNTRIES: { de: '' }
+      ESC_HOMEPAGE_HEATING_COUNTRIES: { en: smart-air-conditioner }
+      FSC_HOMEPAGE_HEATING_COUNTRIES: { fr: climatisation-intelligente }
+      ISC_HOMEPAGE_HEATING_COUNTRIES: { it: climatizzazione-intelligente }
+      SSC_HOMEPAGE_HEATING_COUNTRIES: { es: aire-acondicionado-inteligente }
+      GSC_HOMEPAGE_HEATING_COUNTRIES: { de: smarte-klimasteuerung }
+      DSC_HOMEPAGE_HEATING_COUNTRIES: { nl: slimme-aircobediening }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\SocialMediaStats, Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+    controller: TadoController@genericFlexboxDesign
+  thisIsTado:
+    url:
+      '*': { en: heating-control }
+      FSC: { fr: commande-chauffage }
+      ISC: { it: controllo-riscaldamento }
+      SSC: { es: control-de-calefaccion }
+      GSC: { de: heizungssteuerung }
+    view:
+      redirectAlias: savingsAndPricing
+    controller: TadoController@redirectToAlias
+    sitemap: false
+  setupAndInstallation:
+    url:
+      '*': { en: thermostat-setup }
+      FSC: { fr: thermostat-configuration }
+      ISC: { it: setup-termostato }
+      SSC: { es: configurar-termostato }
+      GSC: { de: thermostat-setup }
+      DSC: { nl: thermostaat-installatie }
+    controller: TadoController@heatingSectionPagesProxy
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      path: pages.setup
+      lg: setup.
+  heatingApp:
+    url:
+      '*': { en: heatingcontrol-app }
+      FSC: { fr: chauffage-controle-app }
+      ISC: { it: app-controllo-riscaldamento }
+      SSC: { es: aplicacion-termostato-inteligente }
+      GSC: { de: heizungssteuerung-app }
+      DSC: { nl: thermostaat-app }
+    controller: TadoController@heatingSectionPagesProxy
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+  savingsAndPricing:
+    url:
+      '*': { en: heatingcontrol-savings }
+      FSC: { fr: commandechauffage-economies }
+      ISC: { it: controllo-riscaldamento-risparmio }
+      SSC: { es: calefaccion-control-de-ahorros }
+      GSC: { de: heizungssteuerung-ersparnis }
+      DSC: { nl: temperatuurregeling-besparing }
+    view:
+      responsiveLayout: true
+      path: pages.savings
+      lg: savings.
+      composers: [Tado\Views\Composers\Money]
+      moneyByCurrency: { EUR: 980, USD: 1000, CHF: 1050, GBP: 800 }
+    controller: TadoController@heatingSectionPagesProxy
+  howTadoWorks:
+    url:
+      '*': { en: thermostat-heating }
+      FSC: { fr: thermostat-chauffage }
+      ISC: { it: termostato-riscaldamento }
+      SSC: { es: termostato-calefaccion }
+      GSC: { de: thermostat-heizung }
+      DSC: { nl: thermostaat-verwarming }
+    controller: TadoController@heatingSectionPagesProxy
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+  howTadoWorksCooling:
+    url:
+      '*': { en: ac-geolocation }
+      FSC: { fr: climatiseur-geolocalisation }
+      ISC: { it: geolocalizzazione-clima }
+      SSC: { es: ac-geolocalizacion }
+      GSC: { de: klimaanlage-geolocation }
+      DSC: { nl: airco-geolocatie }
+    controller: TadoController@genericFlexboxDesign
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+  coolingApp:
+    url:
+      '*': { en: air-conditioning-app }
+      FSC: { fr: appli-climatisation }
+      ISC: { it: app-climatizzazione }
+      SSC: { es: app-aire-acondicionado }
+      GSC: { de: klimaanlage-app }
+      DSC: { nl: airconditioning-app }
+    controller: TadoController@genericFlexboxDesign
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+  cooling:
+    url:
+      '*': { en: air-conditioning-control }
+      FSC: { fr: commande-climatisation }
+      ISC: { it: controllo-climatizzatore }
+      SSC: { es: control-de-aire-acondicionado }
+      GSC: { de: steuerung-klimaanlage }
+      DSC: { nl: airconditioning-bediening }
+    view:
+      redirectAlias: coolingHome
+    controller: TadoController@redirectToAlias
+  coolingSetup:
+    url:
+      '*': { en: setup-ac-remote-control }
+      FSC: { fr: installation-tado-climatisation-intelligente }
+      ISC: { it: telecontrollo-intelligente-condizionatori }
+      SSC: { es: climatizacion-inteligente-instalar }
+      GSC: { de: setup-klimaanlage-fernbedienung }
+      DSC: { nl: installatie-airco-afstandsbediening }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      data: { coolingBrandsCheck: [ACMA, ACSON, ACURA, AIDE, AIKIRA, AIRCON, AIRWELL, AMERICOOL, APTON, ARIAGEL, ARISTON, AUCMA, AUX, AZURE, BEAVER, BGH, 'BLUE STAR', BOSCH, CARRIER, 'CHANG HONG', CHIGO, CHOFU, CHUANHUA, CHUNLAN, CKC, CLASSIC, COMFEE, COMFORTSTAR, CONCORD, 'CONFORT MASTER', CONROWA, CONSUL, COOLRECH, COOLWEX, CORONA, DAEWOO, DAIKIN, DEER, DELCHI, DELONGHI, DIAMANT, ECOAIR, ELCO, ELECTRA, ELECTROLUX, ELGIN, ELSONIC, EMAILAIR, EUROPACE, FAGOR, FEDDERS, FEILU, FIRSTLINE, 'FRESTEC (FRESTECH)', FRIEDRICH, FRIGIDAIRE, FROST, FUJIAIRE, FUJIMARU, FUJITSU, FUNAI, FUNIKI, GALANZ, GALLETTI, GENERAL, 'GENERAL (FUJITSU)', GIBSON, GORENJE, GREE, GREENE, GUANGDA, GUQIAO, HAIER, HERAN, HESSTAR, HISENSE, HITACHI, HUABAO, HUALING, HUIFENG, HYUNDAI, IATU, INYAN(YINYAN), 'KANG LI', KELON, KELVINATOR, KOLIN, KOMECO, KONKA, LENNOX, LEVANTE, LG, LLOYD, MACRO, MAXE, MCQUAY, MIDEA, MIDEA_TOSHIBA, MILLER, MIRAGE, MITSUBISHI, 'MITSUBISHI ELECTRIC', 'MITSUBISHI(HEAVY INDUSTRIES)', NATIONAL, NEC, NEO, NEWCLIME, OLIMPO, OSAKA, PANASONIC, PANDA, PHILCO, PIONEER, PREMIUM, PROTON, RASONIC, RECCO, REETECH, RENFOSS, RIELLO, SAMPO, SAMSUNG, SANYO, 'SAUNIER DUVAL', 'SCHNEIDER ELECTRIC', SHANGLING, SHARP, SHINCO, SHINING, SIEMENS, SPRINGER, 'SUPER GENERAL', SURREY, TADIRAN, TATUNG, TCL, TECO, TONAL, TOPPING, TORNADO, TOSHIBA, TOYO, 'TOYO COOL', TOYOAIRE, TRANE, VIDEOCON, VOLTAS, WEILI, WESTINGHOUSE, WESTPOINT, WHIRLPOOL, WHITE-WESTINGHOUSE, XILENG, YORK, YUETU] }
+    controller: TadoController@genericFlexboxDesign
+  coolingSavingsAndPricing:
+    url:
+      '*': { en: save-ac-costs }
+      FSC: { fr: economies-climatiseur }
+      ISC: { it: costi-aria-condizionata-risparmio }
+      SSC: { es: ahorra-costes-aire-acondicionado }
+      GSC: { de: klimaanlage-kosten-sparen }
+      DSC: { nl: airco-kosten-besparen }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+    controller: TadoController@genericFlexboxDesign
+  coolingReviews:
+    url:
+      '*': { en: air-conditioning-reviews }
+      FSC: { fr: review-climatisation }
+      ISC: { it: review-climatizzatore }
+      SSC: { es: review-de-aire-acondicionado }
+      GSC: { de: review-klimaanlage }
+      DSC: { nl: airconditioning-review }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      composers: [Tado\Views\Composers\ProductPrices, Tado\Views\Composers\Money]
+    controller: TadoController@genericFlexboxDesign
+  tadoCareMain:
+    url:
+      'en,gb': { en: tado-care }
+      de: { de: tado-care }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    controller: TadoController@genericNewDesign
+  tadoCareRedirect:
+    url:
+      us: { en: tado-care }
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://support.tado.com/hc/en-gb'
+      status: 301
+  tech:
+    url:
+      '*': { en: tech }
+      FSC: { fr: tech }
+      ISC: { it: tech }
+      SSC: { es: tech }
+      GSC: { de: technik }
+    view:
+      redirectAlias: setupAndInstallation
+    controller: TadoController@redirectToAlias
+    sitemap: false
+aboutPages:
+  inTheNews:
+    url:
+      '*': { en: in-the-news }
+      FSC: { fr: dans-l-actualite }
+      ISC: { it: nelle-news }
+      SSC: { es: en-las-noticias }
+      GSC: { de: in-der-presse }
+      DSC: { nl: in-het-nieuws }
+    controller: TadoController@genericFlexboxDesign
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+  theIdea:
+    url:
+      '*': { en: the-idea }
+      FSC: { fr: l-idee }
+      ISC: { it: idea }
+      SSC: { es: la-idea }
+      GSC: { de: die-idee }
+      DSC: { nl: het-idee }
+    view:
+      useNewHeader: true
+    controller: TadoController@generic
+  stories:
+    url:
+      '*': { en: stories }
+      FSC: { fr: histoires }
+      ISC: { it: storie }
+      SSC: { es: historias }
+      GSC: { de: stories }
+    view:
+      useNewHeader: true
+    controller: TadoController@generic
+  partner:
+    url:
+      '*': { en: partner-investors }
+      FSC: { fr: partenaires-et-investisseurs }
+      ISC: { it: partner-investitori }
+      SSC: { es: socios-inversores }
+      GSC: { de: partner-investoren }
+      DSC: { nl: partners-investeerders }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    controller: TadoController@genericFlexboxDesign
+  buyTrimPlate:
+    url:
+      ISC: { it: supporto.decorativo }
+    view:
+      redirectUrl: '/it/store/add-products/trim_plate_buy:1'
+    controller: TadoController@externalRedirect
+    sitemap: false
+  buyTrimPlate2:
+    url:
+      ISC: { it: supporto.deco-rativo }
+    view:
+      redirectUrl: '/it/store/add-products/trim_plate_buy:1'
+    controller: TadoController@externalRedirect
+    sitemap: false
+footerPages:
+  jobs:
+    url:
+      '*': { en: jobs }
+      FSC: { fr: emplois }
+      ISC: { it: jobs }
+      SSC: { es: trabaja-con-nosotros }
+      GSC: { de: jobs }
+      DSC: { nl: vacatures }
+    controller: TadoController@redirectToAlias
+    view:
+      redirectAlias: teamAndJobs
+  teamAndJobs:
+    url:
+      '*': { en: team-and-jobs }
+      FSC: { fr: team-et-jobs }
+      ISC: { it: team-e-jobs }
+      SSC: { es: equipo-y-trabajos }
+      GSC: { de: team-und-jobs }
+      DSC: { nl: team-and-jobs }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    controller: TadoController@genericNewDesign
+  faq:
+    url:
+      '*': { en: faq }
+      FSC: { fr: faq }
+      ISC: { it: faq }
+      SSC: { es: faq }
+      GSC: { de: faq }
+    controller: TadoController@faq
+    sitemap: false
+  becomePartner:
+    url:
+      '*': { en: become-a-partner }
+      FSC: { fr: devenir-partenaire }
+      ISC: { it: diventa-partner }
+      SSC: { es: hazte-socio }
+      GSC: { de: partner }
+      DSC: { nl: word-partner }
+    view:
+      useNewHeader: true
+    controller: TadoController@genericWithForm
+  terms:
+    url:
+      '*': { en: terms-and-conditions }
+      FSC: { fr: conditions-generales }
+      ISC: { it: termini-e-condizioni }
+      SSC: { es: terminos-y-condiciones }
+      GSC: { de: agb }
+      DSC: { nl: terms-and-conditions }
+    view:
+      useNewHeader: true
+    controller: TadoController@generic
+  privacy:
+    url:
+      '*': { en: privacy-policies }
+      FSC: { fr: politique-de-confidentialite }
+      ISC: { it: norme-privacy }
+      SSC: { es: politica-de-privacidad }
+      GSC: { de: datenschutz }
+      DSC: { nl: privacy-policies }
+    view:
+      useNewHeader: true
+    controller: TadoController@generic
+  imprint:
+    url:
+      '*': { en: imprint }
+      FSC: { fr: empreinte }
+      ISC: { it: imprint }
+      SSC: { es: impresion }
+      GSC: { de: impressum }
+      DSC: { nl: imprint }
+    view:
+      useNewHeader: true
+    controller: TadoController@generic
+  contact:
+    url:
+      '*': { en: contact }
+      FSC: { fr: contact }
+      ISC: { it: contatti }
+      SSC: { es: contacto }
+      GSC: { de: kontakt }
+      DSC: { nl: contact }
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://support.tado.com/hc/requests/new'
+    sitemap: false
+  srvBeta:
+    url: srvbeta
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://my.tado.com/srvbeta'
+    sitemap: false
+  emergencyZendeskTicket:
+    url: callticket
+    controller: TadoController@genericNewDesignWithForm
+    view:
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      useNewHeader: true
+      responsiveLayout: true
+    sitemap: false
+  emergencyZendeskTicketFormSubmission:
+    url: callticket/formSubmission
+    controller: TadoController@zendeskEmergencyTicket
+    sitemap: false
+  retailers:
+    url:
+      'gb,us,en': { en: retailers }
+      GSC: { de: haendler }
+      it: { it: rivenditori }
+      FSC: { fr: pointsdevente, be: pointsdevente }
+      us: { es: puntos-de-venta }
+      be: { en: retailers }
+      es: { es: puntos-de-venta }
+      DSC: { nl: retailer, be: handelaars }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    controller: TadoController@genericNewDesign
+  retailer-and-partner:
+    url:
+      'dk,gb,us,en': { en: retailers-and-partners, dk: retailers-and-partners }
+      GSC: { de: haendler-und-partner }
+      ISC: { it: rivenditori-e-partner }
+      FSC: { fr: revendeurs-et-partenaires, be: revendeurs-et-partenaires }
+      us: { es: puntos-de-venta-y-socios }
+      be: { en: retailers-en-partners }
+      es: { es: puntos-de-venta-y-socios }
+      DSC: { nl: retailers-en-partners, be: retailers-en-partners }
+      '*': { en: retailers-and-partners }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    controller: TadoController@genericNewDesign
+  BookARepair:
+    url: /gb/book-a-repair
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      path: pages.BookARepair
+      lg: BookARepair.
+      serviceType: book-a-repair
+    controller: TadoController@genericNewDesign
+    afterFilters: addCORSHeadersForApp
+    method: view
+  BookARepair2:
+    url: /gb/book-a-boiler-service
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      path: pages.BookARepair
+      lg: BookARepair.
+      serviceType: book-a-boiler-service
+    controller: TadoController@genericNewDesign
+    afterFilters: addCORSHeadersForApp
+  BookARepair3:
+    url: /gb/get-a-boiler-quote
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      path: pages.BookARepair
+      lg: BookARepair.
+      serviceType: get-a-boiler-quote
+    controller: TadoController@genericNewDesign
+    afterFilters: addCORSHeadersForApp
+  BookARepair4:
+    url: /gb/get-a-boiler-cover
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      path: pages.BookARepair
+      lg: BookARepair.
+      serviceType: get-a-boiler-cover
+    controller: TadoController@genericNewDesign
+    afterFilters: addCORSHeadersForApp
+  BookARepair42:
+    url: /gb/get-boiler-cover
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      path: pages.BookARepair
+      lg: BookARepair.
+      serviceType: get-a-boiler-cover
+    controller: TadoController@genericNewDesign
+    afterFilters: addCORSHeadersForApp
+  BookARepair5:
+    url: /gb/boiler-care-service
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+      path: pages.BookARepair
+      lg: BookARepair.
+      serviceType: boiler-care-service
+    controller: TadoController@genericNewDesign
+    afterFilters: addCORSHeadersForApp
+pressPages:
+  PressLounge:
+    url:
+      '*': { en: press }
+      FSC: { fr: presse }
+      ISC: { it: stampa }
+      SSC: { es: prensa }
+      GSC: { de: presse }
+      DSC: { nl: pers }
+    controller: PressController@pressLounge
+    view:
+      path: pages.pressArticles.PressLounge
+  PressTadoJoinForcesWithEonUk:
+    url:
+      en: { en: press/tado-joins-forces-with-E.ON-UK }
+      gb: { en: press/tado-joins-forces-with-E.ON-UK }
+    controller: PressController@pressArticles
+  PressSavingEnergyCollectiveHeating2017:
+    url:
+      fr: { fr: presse/tetes-thermostatiques-intelligentes-en-france }
+    controller: PressController@pressArticles
+  PressTadoNowLiveWithGoogleHome:
+    url:
+      '*': { en: press/tado-now-live-with-the-google-assistant }
+      GSC: { de: presse/tado-integration-mit-dem-google-assistant-jetzt-live }
+      FSC: { fr: press/tado-est-maintenant-disponible-avec-l-assistant-google }
+      DSC: { nl: tado-s-integratie-met-de-google-assistant-is-nu-live }
+      ISC: { it: lancio-dell-integrazione-di-tado-con-l-assistente-google }
+      SSC: { es: tado-ahora-tambien-integrado-con-el-asistente-de-google }
+    controller: PressController@pressArticles
+  PressTadoPresentsTheNextSoftwareGeneration:
+    url:
+      '*': { en: press/tado-presents-its-next-generation-software-making-tado-the-smart-climate-assistant }
+      GSC: { de: presse/tado-prasentiert-die-nachste-generation-seiner-software-und-stellt-den-smart-climate-assistant-vor }
+      FSC: { fr: presse/tado-presente-son-logiciel-de-nouvelle-generation-faisant-de-tado-un-assistant-climatique-intelligent }
+      DSC: { nl: pers/tado-presenteert-zijn-nieuwe-generatie-software-dit-maakt-van-tado-de-slimme-klimaat-assistent }
+      ISC: { it: stampa/tado-presenta-il-software-di-prossima-generazione-e-diventa-l-assistente-climatico-intelligente-per-la-termoregolazione }
+      SSC: { es: prensa/tado-presenta-su-proxima-generacion-de-software-haciendo-de-tado-el-asistente-climatico-inteligente }
+    controller: PressController@pressArticles
+  PressTadoAppointsToonBoutenAsChiefExecutiveOfficer:
+    url:
+      '*': { en: press/tado-appoints-toon-bouten-as-chief-executive-officer }
+      GSC: { de: presse/tado-ernennt-toon-bouten-zum-chief-executive-officer }
+      FSC: { fr: press/tado-appoints-toon-bouten-as-chief-executive-officer }
+      SSC: { es: press/tado-appoints-toon-bouten-as-chief-executive-officer }
+      ISC: { it: press/tado-appoints-toon-bouten-as-chief-executive-officer }
+      DSC: { nl: press/tado-appoints-toon-bouten-as-chief-executive-officer }
+    controller: PressController@pressArticles
+  PressTadoUkExpansion2017:
+    url:
+      'en, gb': { en: press/releases/tado-uk-expansion }
+    controller: PressController@pressArticles
+  PressTadoUkBoilerRepairServices:
+    url:
+      gb: { en: press/tado-launches-digital-boiler-repair-services }
+    controller: PressController@pressArticles
+  PressTadoAtPepcom2017:
+    url:
+      'en, us': { en: press/releases/tado-at-pepcom2017 }
+    controller: PressController@pressArticles
+  UnlocalizedPressTadoAtPepcom2017:
+    url: pepcom2017
+    view:
+      redirectAlias: PressTadoAtPepcom2017
+    controller: TadoController@redirectToAlias
+    https: true
+    sitemap: false
+  PressAmazonEchoStatement2016:
+    url:
+      '*': { en: press/releases/amazons-alexa-heats-up-europe }
+      GSC: { de: presse/mitteilung/amazons-alexa-heizt-in-europa-ein }
+      FSC: { fr: presse/amazons-alexa-heats-up-europe }
+      SSC: { es: prensa/amazons-alexa-heats-up-europe }
+      ISC: { it: stampa/comunicati/amazons-alexa-heats-up-europe }
+      DSC: { nl: press/releases/amazons-alexa-heats-up-europe }
+    controller: PressController@pressArticles
+  PressIFA2016:
+    url:
+      '*': { en: press/releases/new-products-with-homekit-and-amazon-echo }
+      GSC: { de: presse/mitteilung/neue-produkte-mit-amazon-echo-und-apple-homekit }
+      FSC: { fr: presse/nouveaux-produits-avec-homekit-et-amazon-echo }
+      SSC: { es: prensa/nuevos-productos-con-homekit-y-amazon-echo }
+      ISC: { it: stampa/comunicati/nuovi-prodotti-con-homekit-e-amazon-echo }
+      DSC: { nl: press/releases/nieuwe-producten-met-homekit-en-amazon-echo }
+    controller: PressController@pressArticles
+  PressITInstallersClubLaunch:
+    url:
+      it: { it: stampa/comunicati/tado-professional }
+    controller: PressController@pressArticles
+  PressCE2016:
+    url:
+      us: { en: press/releases/tado-amazon-echo }
+    controller: PressController@pressArticles
+  PressFinancingRound2016:
+    url:
+      '*': { en: press/releases/financing-round-best-funded-iot-startups }
+      GSC: { de: presse/mitteilung/finanzierungsrunde-spitze-iot-unternehmen }
+      FSC: { fr: presse/communiques/financing-round-best-funded-iot-startups }
+      SSC: { es: prensa/releases/financing-round-best-funded-iot-startups }
+      ISC: { it: stampa/comunicati/nuovo-finanziamento-migliore-startup-iot }
+      DSC: { nl: press/releases/financing-round-best-funded-iot-startups }
+    controller: PressController@pressArticles
+  PressATTPartnership:
+    url:
+      '*,-us,-sg': { en: press/releases/tado-partnerships-at-t-telefonica }
+      GSC: { de: presse/mitteilung/tado-partnerschaften-at-t-telefonica }
+      FSC: { fr: presse/communiques/tado-partnerships-at-t-telefonica }
+      SSC: { es: prensa/releases/tado-partnerships-at-t-telefonica }
+      ISC: { it: stampa/comunicati/tado-partnerships-at-t-telefonica }
+      DSC: { nl: press/releases/tado-partnerships-at-t-telefonica }
+    controller: PressController@pressArticles
+  PressATTPartnershipUS:
+    url:
+      'us,sg': { en: press/releases/press/releases/tado-partnership-at-t-ces }
+    controller: PressController@pressArticles
+  PressFinancingRoundFall2015:
+    url:
+      'en,gb,us,de,at,ch': { en: press/releases/new-financing-round-tado }
+      GSC: { de: presse/weiteres-wachstumskapital-fuer-tado }
+      ISC: { it: stampa/comunicati/finanziamento }
+      FSC: { fr: presse/communiques/investissement }
+    controller: PressController@pressArticles
+  PressSingaporeLaunch:
+    url:
+      'en,us,sg': { en: press/releases/tado-singapore-smart-ac-control }
+    controller: PressController@pressArticles
+  PressIFTTTChannels:
+    url:
+      '*': { en: press/releases/tado-ifa-news-IFTTT-channels-live }
+      GSC: { de: presse/tado-ifa-news-IFTTT-Kanaele-live }
+    controller: PressController@pressArticles
+  PressIFA2015Launch:
+    url:
+      '*': { en: press/releases/tado-ifa-news-extended-product-portfolio }
+      FSC: { fr: presse/communiques/tado-ifa-news-extended-product-portfolio }
+      SSC: { es: prensa/releases/tado-ifa-news-extended-product-portfolio }
+      ISC: { it: stampa/comunicati/tado-ifa-nuovi-prodotti-riscaldamento-centralizzato }
+      GSC: { de: presse/mitteilung/tado-ifa-news-erweitertes-produktportfolio }
+      DSC: { nl: press/releases/tado-ifa-nieuws-uitgebreid-product-portfolio }
+    controller: PressController@pressArticles
+  PressBHLaunch:
+    url:
+      'us,en': { en: press/releases/smart-ac-control-available-us-retailers }
+    controller: PressController@pressArticles
+  PressCoolingNYCLaunch:
+    url:
+      '*,-nl,-be': { en: press/releases/tado-introduces-smart-ac-control }
+      FSC: { fr: presse/communiques/tado-climatisation-intelligente }
+      ISC: { it: stampa/comunicati/tado-climatizzazione-intelligente }
+      SSC: { es: prensa/releases/tado-presenta-la-climatizacion-inteligente }
+      GSC: { de: presse/mitteilung/tado-macht-klimaanlagen-intelligent }
+      DSC: { nl: press/releases/tado-lanceert-smart-ac-control }
+    controller: PressController@pressArticles
+  PressBelgianExpansion:
+    url:
+      'nl,be': { en: press/releases/belgian-expansion-strategy }
+      be: { fr: presse/communiques/partenaires-belgique }
+    controller: PressController@pressArticles
+  PressCebit2015:
+    url:
+      GSC: { de: presse/mitteilung/tado-api-ifttt-cebit }
+      '*': { en: press/releases/tado-api-ifttt-cebit }
+    controller: PressController@pressArticles
+  PressFachpartnerLaunch:
+    url:
+      de: { de: presse/mitteilung/fachpartnerprogramm-fuer-installateure }
+    controller: PressController@pressArticles
+  PressEnergiewende2:
+    url:
+      de: { de: presse/mitteilung/gebaeudesanierung-energiewende-selbst-in-die-hand-nehmen }
+    controller: PressController@pressArticles
+  PressSSEPartnership:
+    url:
+      'gb,en': { en: press/releases/tado-partnership-sse }
+    controller: PressController@pressArticles
+  PressCo2Launch:
+    url:
+      GSC: { de: presse/mitteilung/tado-umweltrabatt-schweiz }
+    controller: PressController@pressArticles
+  PressWindowsAppReleased:
+    url:
+      '*': { en: press/releases/new-tado-windows-app }
+      GSC: { de: presse/mitteilung/neues-tado-windows-app }
+      SSC: { es: prensa/releases/nueva-tado-windows-app }
+      FSC: { fr: presse/communiques/tado-windows-phone-app }
+      DSC: { nl: press/releases/new-tado-windows-app }
+    controller: PressController@pressArticles
+  PressNewSmartThermostat:
+    url:
+      '*': { en: press/releases/new-tado-smart-thermostat }
+      GSC: { de: presse/mitteilung/neues-tado-smart-thermostat }
+      FSC: { fr: presse/communiques/new-tado-smart-thermostat }
+      ISC: { it: stampa/comunicati/new-tado-smart-thermostat }
+      SSC: { es: prensa/releases/nuevo-tado-termostato-inteligente }
+      DSC: { nl: press/releases/new-tado-smart-thermostat }
+    controller: PressController@pressArticles
+  PressTadoCare:
+    url:
+      '*': { en: press/releases/tado-care-ifa }
+      FSC: { fr: presse/communiques/tado-care-ifa }
+      ISC: { it: stampa/comunicati/tado-care-ifa }
+      SSC: { es: prensa/releases/tado-care-ifa }
+      GSC: { de: presse/mitteilung/tado-care-ifa }
+      DSC: { nl: press/releases/tado-care-ifa }
+    controller: PressController@pressArticles
+  PressHomeserve:
+    url:
+      '*': { en: press/releases/tado-homeserve-partnership }
+      FSC: { fr: presse/communiques/tado-partenariat-homeserve }
+      ISC: { it: stampa/comunicati/tado-homeserve-partnership }
+      SSC: { es: prensa/releases/tado-homeserve-partnership }
+      GSC: { de: presse/mitteilung/tado-homeserve-partnerschaft }
+      DSC: { nl: press/releases/tado-homeserve-partnership }
+    controller: PressController@pressArticles
+  PressFinancing:
+    url:
+      '*': { en: press/releases/tado-financing }
+      FSC: { fr: presse/communiques/tado-financement }
+      ISC: { it: stampa/comunicati/tado-finanziamento }
+      SSC: { es: prensa/releases/tado-finanziacion }
+      GSC: { de: presse/mitteilung/tado-finanzierung }
+      DSC: { nl: press/releases/tado-financing }
+    controller: PressController@pressArticles
+  PressCoolingKickstarter:
+    url:
+      '*': { en: press/releases/tado-cooling-kickstarter }
+      FSC: { fr: presse/communiques/tado-cooling-kickstarter }
+      ISC: { it: stampa/comunicati/tado-cooling-kickstarter }
+      SSC: { es: prensa/releases/tado-aire-acondicionado-kickstarter }
+      GSC: { de: presse/mitteilung/tado-cooling-kickstarter }
+      DSC: { nl: press/releases/tado-cooling-kickstarter }
+    controller: PressController@pressArticles
+  PressNestUkLaunch:
+    url:
+      '*': { en: press/releases/tado-intelligent-thermostat-uk }
+      FSC: { fr: presse/communiques/tado-thermostat-intelligent-gb }
+      ISC: { it: stampa/comunicati/tado-termostato-intelligente-italia }
+      SSC: { es: prensa/releases/tado-termostato-inteligente-espana }
+      GSC: { de: presse/mitteilung/tado-intelligent-thermostat-uk }
+      DSC: { nl: press/releases/tado-intelligent-thermostat-uk }
+    controller: PressController@pressArticles
+  PressCebit2014:
+    url:
+      '*': { en: press/releases/new-web-app-cebit-2014 }
+      FSC: { fr: presse/communiques/nouvelle-app-web-cebit-2014 }
+      ISC: { it: stampa/comunicati/nuova-web-app-cebit-2014 }
+      SSC: { es: prensa/releases/nueva-web-app-cebit-2014 }
+      GSC: { de: presse/mitteilung/neue-web-app-cebit-2014 }
+      DSC: { nl: press/releases/new-web-app-cebit-2014 }
+    controller: PressController@pressArticles
+  PressEnergieWende:
+    url:
+      GSC: { de: presse/mitteilung/tado-die-Energiewende-in-der-Hosentasche }
+    controller: PressController@pressArticles
+  PressTadoNestGoogle:
+    url:
+      '*': { en: tado-nest-google }
+      FSC: { fr: tado-nest-google }
+      ISC: { it: tado-nest-google }
+      SSC: { es: tado-nest-google }
+      GSC: { de: tado-nest-google }
+      DSC: { nl: tado-nest-google }
+    controller: PressController@pressArticles
+  PressUkLaunch:
+    url:
+      '*': { en: tado-uk-launch }
+      FSC: { fr: tado-lancement-gb }
+      ISC: { it: tado-lancio-italia }
+      SSC: { es: tado-lanza-gran-bretania }
+      GSC: { de: tado-startet-verkauf-grossbritannien }
+      DSC: { nl: tado-uk-launch }
+    controller: PressController@pressArticles
+  PressTheHeatingApp:
+    url:
+      '*': { en: press/releases/tado-the-heating-app }
+      FSC: { fr: presse/communiques/tado-app-pour-chauffage }
+      ISC: { it: stampa/comunicati/tado-app-riscaldamento }
+      SSC: { es: prensa/releases/tado-la-app-para-la-calefaccion }
+      GSC: { de: presse/mitteilung/tado-the-heating-app }
+      DSC: { nl: press/releases/tado-the-heating-app }
+    controller: PressController@pressArticles
+  PressHeatingSmart2:
+    url:
+      GSC: { de: presse/mitteilung/smart-heizen-mit-tado-die-antwort-auf-den-langen-und-teuren-winter }
+    controller: PressController@pressArticles
+  PressEnergieMarkt:
+    url:
+      GSC: { de: presse/mitteilung/zwei-junge-muenchner-unternehmen-heizen-dem-energiemarkt-ein }
+    controller: PressController@pressArticles
+  PressHeatingFingertips:
+    url:
+      '*': { en: press/release/heating-at-your-fingertips-with-tado }
+      FSC: { fr: presse/communique/chauffage-a-portee-de-main-avec-tado }
+      ISC: { it: stampa/comunicati/riscaldamento-a-portata-di-mano-con-tado }
+      SSC: { es: prensa/release/calefaccion-en-tus-manos-con-tado }
+      GSC: { de: presse/mitteilung/mit-tado-die-heizung-fest-im-griff }
+      DSC: { nl: press/release/heating-at-your-fingertips-with-tado }
+    controller: PressController@pressArticles
+  PressDiscoverTado:
+    url:
+      '*': { en: press/release/discover-tado-the-intelligent-heating-app-now-is-available-worldwide-and-features-a-demo-mode }
+      FSC: { fr: presse/communique/decouvrir-tado-l-app-pour-chauffage-intelligent-disponible-maintenant-dans-le-monde-entier-et-contient-mode-demo }
+      ISC: { it: stampa/comunicati/scopri-app-termostato-intelligente-disponibile-worldwide-e-in-modalita-demo }
+      SSC: { es: prensa/release/descubre-la-app-inteligente-ahora-disponible-en-todo-el-mundo }
+      GSC: { de: presse/mitteilung/tado-entdecken-app-zum-intelligenten-heizen-jetzt-weltweit-mit-demomodus-verfuegbar }
+      DSC: { nl: press/release/discover-tado-the-intelligent-heating-app-now-is-available-worldwide-and-features-a-demo-mode }
+    controller: PressController@pressArticles
+  PressHeatingSmart:
+    url:
+      '*': { en: press/release/tado-your-heating-just-got-smart }
+      FSC: { fr: presse/communique/tado-votre-chauffage-devient-intelligent }
+      ISC: { it: stampa/comunicati/tado-riscaldamento-intelligente }
+      SSC: { es: prensa/release/tado-tu-calefaccion-es-ahora-inteligente }
+      GSC: { de: presse/mitteilung/tado-die-energiewende-fuer-zuhause }
+      DSC: { nl: press/release/tado-your-heating-just-got-smart }
+    controller: PressController@pressArticles
+formThankYouPages:
+  formAjaxSubmission:
+    url:
+      '*': { en: /ajaxform/submit }
+      FSC: { fr: /ajaxform/submit }
+      ISC: { it: /ajaxform/submit }
+      SSC: { es: /ajaxform/submit }
+      GSC: { de: /ajaxform/submit }
+      DSC: { nl: /ajaxform/submit }
+    view:
+      path: layouts.ajaxTagged
+    controller: TadoController@genericWithForm
+    sitemap: false
+  formsNewsletterConfirmation:
+    url:
+      '*': { en: /tado-newsletter/thankyou }
+      FSC: { fr: /tado-newsletter/thankyou }
+      ISC: { it: /tado-newsletter/thankyou }
+      SSC: { es: /tado-newsletter/thankyou }
+      GSC: { de: /tado-newsletter/danke }
+      DSC: { nl: /tado-newsletter/danke }
+    controller: TadoController@genericFromForm
+    sitemap: false
+  compatibilityCheckThankYou:
+    url:
+      '*': { en: /compatibility-check/thankyou }
+      FSC: { fr: /compatibility-check/thankyou }
+      ISC: { it: /compatibility-check/thankyou }
+      SSC: { es: /compatibility-check/thankyou }
+      GSC: { de: /compatibility-check/danke }
+      DSC: { nl: /compatibility-check/thankyou }
+    controller: TadoController@genericFromForm
+    sitemap: false
+  telesalesPopupThankYou:
+    url:
+      '*': { en: /technical-questions/thankyou }
+      FSC: { fr: /technical-questions/thankyou }
+      ISC: { it: /technical-questions/thankyou }
+      SSC: { es: /technical-questions/thankyou }
+      GSC: { de: /technik-fragen/danke }
+      DSC: { nl: /technical-questions/thankyou }
+    view:
+      path: shared.jsonFormFeedback
+    controller: TadoController@genericFromForm
+    sitemap: false
+  telesalesPopupThankYouSecure:
+    https: true
+    url:
+      '*': { en: /technical-questions/thankyou2 }
+      FSC: { fr: /technical-questions/thankyou2 }
+      ISC: { it: /technical-questions/thankyou2 }
+      SSC: { es: /technical-questions/thankyou2 }
+      GSC: { de: /technik-fragen/danke2 }
+      DSC: { nl: /technical-questions/thankyou2 }
+    view:
+      path: shared.jsonFormFeedback
+    controller: TadoController@genericFromForm
+    sitemap: false
+  telesalesPopupFlagAsShownSecure:
+    url: /technical-questions/telesales-popup-shown
+    controller: TadoController@popupFlagAsShown
+    https: true
+    sitemap: false
+    view:
+      shownFlagKey: telesales_popup_shown
+  telesalesPopupFlagAsShown:
+    url: /technical-questions/telesales-popup-shown2
+    controller: TadoController@popupFlagAsShown
+    https: false
+    sitemap: false
+    view:
+      shownFlagKey: telesales_popup_shown
+  smartPopupFlagAsShownSecure:
+    url: /technical-questions/smart-promo-shown
+    controller: TadoController@popupFlagAsShown
+    https: true
+    sitemap: false
+    view:
+      shownFlagKey: march2016_promo_shown
+  smartPopupFlagAsShown:
+    url: /technical-questions/smart-promo-shown2
+    controller: TadoController@popupFlagAsShown
+    https: false
+    sitemap: false
+    view:
+      shownFlagKey: march2016_promo_shown
+  coolingPopupFlagAsShownSecure:
+    url: /technical-questions/cooling-promo-shown
+    controller: TadoController@popupFlagAsShown
+    https: true
+    sitemap: false
+    view:
+      shownFlagKey: cooling_promo_shown
+formSubmissionEndpoints:
+  genericFormSubmissionEndpointSecure:
+    https: true
+    url:
+      '*': { en: /ajax/generic-endpoint }
+      FSC: { fr: /ajax/generic-endpoint }
+      ISC: { it: /ajax/generic-endpoint }
+      SSC: { es: /ajax/generic-endpoint }
+      GSC: { de: /ajax/generic-endpoint }
+      DSC: { nl: /ajax/generic-endpoint }
+    view:
+      path: shared.jsonFormFeedback
+    controller: TadoController@genericFromForm
+    sitemap: false
+miscellaneousPages:
+  myTadoLogin:
+    url: login
+    controller: TadoController@myTadoLogin
+    sitemap: false
+  support:
+    url: support
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://support.tado.com'
+    sitemap: false
+  supportNL:
+    url: helpdesk
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://support.tado.com/hc/nl'
+    sitemap: false
+  supportLocalizedRedirect:
+    url:
+      '*': { en: support }
+      FSC: { fr: support }
+      ISC: { it: support }
+      SSC: { es: support }
+      GSC: { de: support }
+      DSC: { nl: support }
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://support.tado.com'
+    sitemap: false
+  shippingPostponedFeb2017:
+    url:
+      '*': { en: email/su2017-thankyou }
+      FSC: { fr: email/su2017-thankyou }
+      ISC: { it: email/su2017-thankyou }
+      SSC: { es: email/su2017-thankyou }
+      GSC: { de: email/su2017-thankyou }
+      DSC: { nl: email/su2017-thankyou }
+    controller: TadoController@shippingPostponedFeb2017
+    filters: checkOrderHashControlAuthentication
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    sitemap: false
+  shippingPostponedApril2017:
+    url:
+      '*': { en: email/spua2017-thankyou }
+      FSC: { fr: email/spua2017-thankyou }
+      ISC: { it: email/spua2017-thankyou }
+      SSC: { es: email/spua2017-thankyou }
+      GSC: { de: email/spua2017-thankyou }
+      DSC: { nl: email/spua2017-thankyou }
+    controller: TadoController@shippingPostponedApril2017
+    filters: checkOrderHashControlAuthentication
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    sitemap: false
+  gb_ceConformityDeclaration:
+    url: conformity
+    controller: TadoController@genericNewDesign
+    view:
+      path: pages.ceConformityDeclaration
+      lg: ceConformityDeclaration.
+      useNewHeader: true
+      responsiveLayout: true
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+  de_ceConformityDeclaration:
+    url: konformitaet
+    controller: TadoController@genericNewDesign
+    view:
+      path: pages.ceConformityDeclaration
+      lg: ceConformityDeclaration.
+      useNewHeader: true
+      responsiveLayout: true
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+  it_ceConformityDeclaration:
+    url: conformita
+    controller: TadoController@genericNewDesign
+    view:
+      path: pages.ceConformityDeclaration
+      lg: ceConformityDeclaration.
+      useNewHeader: true
+      responsiveLayout: true
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+  es_ceConformityDeclaration:
+    url: conformidad
+    controller: TadoController@genericNewDesign
+    view:
+      path: pages.ceConformityDeclaration
+      lg: ceConformityDeclaration.
+      useNewHeader: true
+      responsiveLayout: true
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+  fr_ceConformityDeclaration:
+    url: conformite
+    controller: TadoController@genericNewDesign
+    view:
+      path: pages.ceConformityDeclaration
+      lg: ceConformityDeclaration.
+      useNewHeader: true
+      responsiveLayout: true
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+  nl_ceConformityDeclaration:
+    url: conformiteit
+    controller: TadoController@genericNewDesign
+    view:
+      path: pages.ceConformityDeclaration
+      lg: ceConformityDeclaration.
+      useNewHeader: true
+      responsiveLayout: true
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+  facebookRedirect:
+    url: facebook
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://www.facebook.com/tado'
+    sitemap: false
+  coolingShopRedirect:
+    url: cooling
+    controller: TadoController@redirectToAlias
+    view:
+      redirectUnlocalizedAlias: shopCoolingBranch
+    sitemap: false
+  checkRedirect:
+    url: check
+    controller: TadoController@redirectToAlias
+    view:
+      redirectAlias: setupAndInstallation
+    sitemap: false
+  echoRedirect:
+    url: echo
+    controller: TadoController@redirectToAlias
+    view:
+      redirectAlias: amazonEcho
+    sitemap: false
+  saccQRRedirect:
+    url: savings
+    controller: TadoController@redirectToAlias
+    view:
+      locale: us
+      redirectAlias: coolingSavingsAndPricing
+    sitemap: false
+  healthCheck:
+    url: healthCheck
+    controller: TadoController@healthCheck
+    sitemap: false
+    https: false
+    view:
+      path: pages.home
+  countrySitemap:
+    url:
+      '*, -de,-at,-ch,-fr': { en: /sitemap.xml }
+      FSC: { fr: /sitemap.xml }
+      ISC: { it: /sitemap.xml }
+      SSC: { es: /sitemap.xml }
+      GSC: { de: /sitemap.xml }
+      DSC: { nl: /sitemap.xml }
+    controller: ActionsController@countrySitemapDownload
+    sitemap: false
+  robots:
+    url: robots.txt
+    controller: TadoController@robots
+    sitemap: false
+    view:
+      path: pages.robots
+    expirationType: static
+  supportFromDotDE:
+    url: de//support
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/de'
+  supportDE:
+    url: support
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/de'
+  supportFromDotCOM:
+    url: /de/support
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/de'
+  supportFromDotNL:
+    url: nl//helpdesk
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/nl'
+  helpdeskNL:
+    url: helpdesk
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/nl'
+  assistanceFromDotES:
+    url: es//asistencia
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/es'
+  assistanceES:
+    url: asistencia
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/es'
+  assistanceFromDotIT:
+    url: it//aiuto
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/it'
+  assistanceIT:
+    url: aiuto
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/it'
+  assistanceFromDotFR:
+    url: fr//assistance
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/fr'
+  assistanceFR:
+    url: assistance
+    controller: TadoController@externalRedirect
+    sitemap: false
+    view:
+      redirectUrl: 'https://support.tado.com/hc/fr'
+  3dProductAcKickstarter:
+    url: /en/air-conditioning-control-demo
+    controller: TadoController@genericNewDesign
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+  esgStickersRedirect:
+    url: eg
+    controller: TadoController@redirectToAlias
+    view:
+      redirectAlias: savingsAndPricing
+      hashtag: energy-savings-guarantee
+    sitemap: false
+  marketing:
+    url: marketing
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://www.tado.com/t/en/marketing/'
+    sitemap: false
+  tadoToAntarctica:
+    url: antarctica
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://www.tado.com/t/en/antarctica'
+      status: 301
+  academy:
+    url: academy
+    controller: TadoController@externalRedirect
+    view:
+      redirectUrl: 'https://www.tado.com/t/en/academy-2/'
+      status: 301
+bridgeV3UpgradeLandingPages:
+  bridgeV3UpgradeLP:
+    url:
+      '*': { en: internet-bridge-upgrade }
+      GSC: { de: internet-bridge-upgrade }
+      ISC: { it: internet-bridge-upgrade }
+      SSC: { es: actualizacion-bridge-internet }
+      FSC: { fr: nouveau-bridge-internet }
+      DSC: { nl: internet-bridge-upgrade }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    controller: TadoController@genericFlexboxDesign
+    sitemap: false
+  bridgeV3UpgradeUnlocalizedLP:
+    url: bridge-upgrade
+    view:
+      redirectAlias: bridgeV3UpgradeLP
+    controller: TadoController@redirectToAlias
+    sitemap: false
+  bridgeV3UpgradeUnlocalizedLP2:
+    url: bridgeupgrade
+    view:
+      redirectAlias: bridgeV3UpgradeLP
+    controller: TadoController@redirectToAlias
+    sitemap: false
+  bridgeV3UpgradeSubmission:
+    url: internet-bridge-upgradeSubmission
+    controller: TadoController@internetBridgeUpgradeRedirector
+    sitemap: false
+landingPages:
+  iot:
+    url:
+      '*': { en: internet-of-things }
+      GSC: { de: internet-der-dinge }
+      FSC: { fr: Internet-des-objets }
+      ISC: { it: internet-delle-cose }
+      SSC: { es: internetdelascosas }
+      DSC: { nl: Internet-der-dingen }
+    view:
+      useNewHeader: true
+      responsiveLayout: true
+    controller: TadoController@genericNewDesign
+  lp1:
+    url:
+      GSC: { de: lp1 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp1
+      landingPage: '1'
+    sitemap: false
+  lp2:
+    url:
+      de: { de: wir-rufen-zurueck }
+      gb: { en: free-call-back }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp2
+      landingPage: '2'
+    sitemap: false
+  lp3:
+    url:
+      '*': { en: heating-app }
+      GSC: { de: lp3 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp3
+      landingPage: '3'
+    sitemap: false
+  lp4:
+    url:
+      GSC: { de: lp4 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp4
+      landingPage: '4'
+    sitemap: false
+  lp5:
+    url:
+      GSC: { de: lp5 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp5
+      landingPage: '5'
+    sitemap: false
+  lp6:
+    url:
+      GSC: { de: lp6 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp6
+      landingPage: '6'
+    sitemap: false
+  lp7:
+    url:
+      GSC: { de: lp7 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp7
+      landingPage: '7'
+    sitemap: false
+  newLpa1OrangeButton:
+    url:
+      GSC: { de: lp/ct-1a-bt-or-heizungssteuerung }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      actionButtonLangKey: actionEntdecken
+      actionButtonColor: orange
+      actionButtonImage: true
+      saveUpToTextLangKey: saveUpTo2
+      actionWrapperClass: 'smaller imgIcon'
+      lg: newLpa1.
+    sitemap: false
+  newLpa1LightGreenButton:
+    url:
+      GSC: { de: lp/ct-1a-bt-gr-heizungssteuerung }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      actionButtonLangKey: actionEntdecken
+      actionButtonColor: lightGreen
+      actionButtonImage: true
+      saveUpToTextLangKey: saveUpTo2
+      actionWrapperClass: 'smaller imgIcon'
+      lg: newLpa1.
+    sitemap: false
+  newLpa1BlueButton:
+    url:
+      GSC: { de: lp/ct-1a-bt-bl-heizungssteuerung }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      actionButtonLangKey: actionEntdecken
+      actionButtonColor: blue
+      actionButtonImage: true
+      saveUpToTextLangKey: saveUpTo2
+      actionWrapperClass: 'smaller imgIcon'
+      lg: newLpa1.
+    sitemap: false
+  newLpa1GreyBlueButton:
+    url:
+      GSC: { de: lp/ct-1a-bt-gbl-heizungssteuerung }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      actionButtonLangKey: actionEntdecken
+      actionButtonColor: greyBlue
+      actionButtonImage: true
+      saveUpToTextLangKey: saveUpTo2
+      actionWrapperClass: 'smaller imgIcon'
+      lg: newLpa1.
+    sitemap: false
+  newLpa1LightBlueButton:
+    url:
+      GSC: { de: lp/ct-1a-bt-lbl-heizungssteuerung }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      actionButtonLangKey: actionEntdecken
+      actionButtonColor: lightBlue
+      actionButtonImage: true
+      saveUpToTextLangKey: saveUpTo2
+      actionWrapperClass: 'smaller imgIcon'
+      lg: newLpa1.
+    sitemap: false
+  newLpa1YellowButton:
+    url:
+      GSC: { de: lp/ct-1a-bt-ye-heizungssteuerung }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      actionButtonLangKey: actionEntdecken
+      actionButtonColor: yellow
+      actionButtonImage: true
+      saveUpToTextLangKey: saveUpTo2
+      actionWrapperClass: 'smaller imgIcon'
+      lg: newLpa1.
+    sitemap: false
+  newLpa1:
+    url:
+      at: { de: lp/ct-1a-heizungssteuerung }
+    view:
+      redirectAlias: home
+    controller: TadoController@redirectToAlias
+    sitemap: false
+  newLpa1Variation1:
+    url:
+      gb: { en: lp/ct-1a-heatingcontrol }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      lg: newLpa1.
+      body_class: header-variation-1
+    sitemap: false
+  newLpa1Variation2:
+    url:
+      GSC: { de: lp/ct-1a-2-heizungssteuerung }
+      gb: { en: lp/ct-1a-2-heatingcontrol }
+      FSC: { fr: lp/ct-1a-2-commande-chauffage }
+      SSC: { es: lp/ct-1a-2-control-calefaccion }
+      ISC: { it: lp/ct-1a-2-controllo-riscaldamento }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1
+      lg: newLpa1.
+      body_class: header-variation-1
+    sitemap: false
+  newLpa1Variation3:
+    url:
+      GSC: { de: lp/ct-1a-3-heizungssteuerung }
+      gb: { en: lp/ct-1a-3-heatingcontrol }
+      FSC: { fr: lp/ct-1a-3-commande-chauffage }
+      SSC: { es: lp/ct-1a-3-control-calefaccion }
+      ISC: { it: lp/ct-1a-3-controllo-riscaldamento }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1
+      lg: newLpa1.
+      body_class: header-variation-2
+    sitemap: false
+  newLpa1Variation4:
+    url:
+      GSC: { de: lp/ct-1b-heizungssteuerung }
+      gb: { en: lp/ct-1b-heatingcontrol }
+      FSC: { fr: lp/ct-1b-commande-chauffage }
+      it: { it: lp/ct-1b-controllo-riscaldamento }
+      es: { es: lp/ct-1b-control-calefaccion }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      lg: newLpa1.
+    sitemap: false
+  newLpa1Variation5:
+    url:
+      GSC: { de: lp/ct-1b-2-heizungssteuerung }
+      gb: { en: lp/ct-1b-2-heatingcontrol }
+      nl: { en: lp/ct-1a-heatingcontrol }
+      FSC: { fr: lp/ct-1b-2-commande-chauffage }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      lg: newLpa1.
+      body_class: header-variation-1
+    sitemap: false
+  newLpa1Variation6:
+    url:
+      GSC: { de: lp/ct-1b-3-heizungssteuerung }
+      gb: { en: lp/ct-1b-3-heatingcontrol }
+      FSC: { fr: lp/ct-1b-3-commande-chauffage }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa1Variation1
+      lg: newLpa1.
+      body_class: header-variation-2
+    sitemap: false
+  newLpa2:
+    url:
+      GSC: { de: lp/ct-2a-heizungssteuerung }
+      gb: { en: lp/ct-2a-heatingcontrol }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa2
+      translationOverridePrefix: ''
+    sitemap: false
+  newLpa2Geo:
+    url:
+      GSC: { de: lp/ct-2a-geo-heizungssteuerung }
+      gb: { en: lp/ct-2a-geo-heatingcontrol }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      lg: newLpa2.
+      path: pages.landingPages.newLandingPages.lpa2
+      translationOverridePrefix: geoVariation.
+    sitemap: false
+  newLpa3:
+    url:
+      GSC: { de: lp/ct-3a-heizungssteuerung }
+      gb: { en: lp/ct-3a-heatingcontrol }
+      fr: { fr: lp/ct-3a-commande-chauffage }
+      it: { it: lp/ct-3a-controllo-riscaldamento }
+      es: { es: lp/ct-3a-control-calefaccion }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa3
+    sitemap: false
+  newLpa4:
+    url:
+      GSC: { de: lp/ct-4a-heizungssteuerung }
+      gb: { en: lp/ct-4a-heatingcontrol }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpa4
+    sitemap: false
+  newLpb1:
+    url:
+      GSC: { de: lp/le-1a-heizungssteuerung }
+      gb: { en: lp/le-1a-heatingcontrol }
+      fr: { fr: lp/le-1a-commande-chauffage }
+      it: { it: lp/le-1a-controllo-riscaldamento }
+      es: { es: lp/le-1a-control-calefaccion }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpb1
+    sitemap: false
+  newLpb2:
+    url:
+      GSC: { de: lp/le-2a-heizungssteuerung }
+      gb: { en: lp/le-2a-heatingcontrol }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpb2
+    sitemap: false
+  newLpb3:
+    url:
+      GSC: { de: lp/le-3a-heizungssteuerung }
+      gb: { en: lp/le-3a-heatingcontrol }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpb3
+    sitemap: false
+  newLpb4:
+    url:
+      GSC: { de: lp/le-4a-heizungssteuerung }
+      gb: { en: lp/le-4a-heatingcontrol }
+    controller: TadoController@genericWithForm
+    view:
+      prefixTitle: false
+      path: pages.landingPages.newLandingPages.lpb4
+    sitemap: false
+  kaminkehrer:
+    url:
+      GSC: { de: kaminkehrer }
+    controller: TadoController@genericWithForm
+    sitemap: false
+  iWantToKnow:
+    url: sayhi
+    controller: TadoController@iWantToKnow
+    view:
+      path: pages.landingPages.iWantToKnow
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+      composers: [Tado\Views\Composers\NyCoolingEventSignupCount]
+    sitemap: false
+  iWantToKnowCheckCode:
+    url: sayhello/checkcode
+    controller: TadoController@iWantToKnowCheckCode
+    sitemap: false
+  ces2014:
+    url: ces
+    controller: TadoController@ces2014
+    sitemap: false
+  ces2014Archived:
+    url: ces/archived/template
+    controller: TadoController@genericWithForm
+    view:
+      path: pages.landingPages.ces2014
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+    sitemap: false
+  mobitelWidget:
+    url: checkMobitel
+    controller: TadoController@mobitelWidget
+    sitemap: false
+  punkLP:
+    url: punk
+    controller: TadoController@punk
+    sitemap: false
+  winIpad:
+    url: win-ipad
+    controller: TadoController@generic
+    view:
+      path: pages.landingPages.winIpad
+      config: { app.locale: gb, app.language: en, app.country: gb }
+      language: en
+    sitemap: false
+  winNexus5:
+    url: nexus5
+    controller: TadoController@genericWithForm
+    view:
+      path: pages.landingPages.winNexus5
+      config: { app.locale: de, app.language: de, app.country: de }
+      language: de
+    sitemap: false
+  entega:
+    url: entega
+    controller: TadoController@shopTemplatesPages
+    https: true
+    sitemap: false
+    view:
+      config: { app.locale: de, app.language: de, app.country: de }
+  rhein:
+    url: rheinenergie
+    view:
+      redirectAlias: home
+    controller: TadoController@redirectToAlias
+    https: true
+    sitemap: false
+  kickstarterPress:
+    url: spreadtheword
+    controller: TadoController@shopTemplatesPages
+    view:
+      language: en
+    sitemap: false
+  heatingControl:
+    url:
+      '*': { en: lp/heating-control }
+      GSC: { de: lp/heizungssteuerung }
+    controller: TadoController@shopTemplatesPages
+    sitemap: false
+  clonedlp1:
+    url:
+      GSC: { de: /lp/lp1 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp1
+      landingPage: '1'
+      lg: lp1.
+    sitemap: false
+  clonedlp2:
+    url:
+      de: { de: /lp/wir-rufen-zurueck }
+      gb: { en: /lp/free-call-back }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp2
+      landingPage: '2'
+      lg: lp2.
+    sitemap: false
+  clonedlp3:
+    url:
+      '*': { en: /lp/heating-app }
+      GSC: { de: /lp/lp3 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp3
+      landingPage: '3'
+      lg: lp3.
+    sitemap: false
+  clonedlp4:
+    url:
+      GSC: { de: /lp/lp4 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp4
+      landingPage: '4'
+      lg: lp4.
+    sitemap: false
+  clonedlp5:
+    url:
+      GSC: { de: /lp/lp5 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp5
+      landingPage: '5'
+      lg: lp5.
+    sitemap: false
+  clonedlp6:
+    url:
+      GSC: { de: /lp/lp6 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp6
+      landingPage: '6'
+      lg: lp6.
+    sitemap: false
+  clonedlp7:
+    url:
+      GSC: { de: /lp/lp7 }
+    controller: TadoController@landingPages
+    view:
+      prefixTitle: false
+      path: pages.landingPages.lp7
+      landingPage: '7'
+      lg: lp7.
+    sitemap: false
