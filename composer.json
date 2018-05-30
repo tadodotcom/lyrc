@@ -41,11 +41,6 @@
             "providers": [
                 "Tado\\Lyrc\\LyrcServiceProvider"
             ]
-        },
-        "branch-alias": {
-            "dev-master": "*"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
