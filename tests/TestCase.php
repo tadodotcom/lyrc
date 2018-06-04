@@ -14,7 +14,7 @@ class TestCase extends OrchestraTestCase
 
         $this->cmd = $this->app[Kernel::class];
 
-        $this->app['config']->set('lyrc', require 'src/config/lyrc.php');
+        $this->app['config']->set('lyrc', require './src/config/lyrc.php');
     }
 
     /**

@@ -12,7 +12,7 @@ class CompileRoutesCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'tado:lyrc {--N|versioned}';
+    protected $signature = 'tado:lyrc {--N|versioned} {--r|result_file_path=} {--y|yaml_file_path=}';
 
     /**
      * The console command description.
@@ -41,28 +41,11 @@ class CompileRoutesCommand extends Command
      */
     public function handle()
     {
-        // $path = config('lyrc.filePath');
-
-        // if (empty($path)) {
-        //     return $this->error('Please define the routes yml file in config/lyrc.php.');
-        // }
-
-        // file existence should be responsibility of the RoutesCompiler class
-        // if (!file_exists($path)) {
-        //     return $this->error("Please verify the file $path exist.");
-        // }
-
-        // ToDo - validate the format of the yml file for compability with the compiler
-        // if (!$this->routesCompiler->isValid($path)) {
-        //     return $this->error("Please verify the file $path is a valid routes file.");
-        // }
-
-        $versioned = $this->option('versioned');
-
         $this->info('Compiling your yaml file...');
+        $this->setConfigurations();
 
         try {
-            if ($filePath = $this->routesCompiler->compile($versioned)) {
+            if ($filePath = $this->routesCompiler->compile()) {
                 $this->info($filePath);
             } else {
                 $this->error("Some error occurred while creating the file!");
@@ -73,5 +56,20 @@ class CompileRoutesCommand extends Command
         }
 
         $this->info('Routes compiled successfully!');
+    }
+
+    private function setConfigurations()
+    {
+        if ($versioned = $this->option('versioned')) {
+            config(['lyrc.versioned' => $versioned]);
+        }
+
+        if ($yaml_file_path = $this->option('yaml_file_path')) {
+            config(['lyrc.source_file_path' => $yaml_file_path]);
+        }
+
+        if ($result_file_path = $this->option('result_file_path')) {
+            config(['lyrc.compiled_file_path' => $result_file_path]);
+        }
     }
 }

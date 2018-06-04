@@ -5,7 +5,7 @@ return [
     // 'namespace' => 'Modules\InstallersClub\Http\Controllers',
     // 'prefix' => 'installersclub',
     'source_file_path' => 'routes.yml',
-    'compiled_file_path' => '',
+    'compiled_file_path' => 'compiled_routes.php',
 
     'countries' => [
         'at' => ['de', 'en'],
